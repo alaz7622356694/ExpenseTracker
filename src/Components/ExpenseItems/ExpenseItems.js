@@ -1,12 +1,12 @@
 import React from 'react'
 import './ExpenseItems.css'
-function ExpenseItems() {
+function ExpenseItems(props) {
     return (
         <div className="expense-item">
-            <div>24/4/2021</div>
+            <div>{props.date.toISOString()}</div>
             <div className="expense-item__description">
-<h2>Car Insurance</h2>
-<div className='expense-item__price'>$134.78</div>
+<h2>{props.title}</h2>
+<div className='expense-item__price'>${props.amount}</div>
 
             </div>
             
