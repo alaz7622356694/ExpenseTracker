@@ -3,9 +3,8 @@ import Expenses from "./Components/Expenses/Expenses";
 function App() {
   return (
     <div>
-     <h2> Let's get started</h2>
+     <h1 style={{textAlign:"center"}}>Expense Tracker</h1>
     <Expenses></Expenses>
-    
     
     </div>
   );
