@@ -1,9 +1,9 @@
 import React , {useState} from 'react'
 import './ExpenseItems.css'
 import ExpenseDate from '../ExpenseDate/ExpenseDate'
-import Card from '../Card/Card'
+import Card from '../UI/Card/Card'
 const ExpenseItems=(props)=> {
-    
+
 //we declare a new state variable by calling the useState Hook.
 const[title,setTitle]=useState(props.title)
 
