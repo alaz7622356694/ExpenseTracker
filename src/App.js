@@ -1,9 +1,9 @@
 import Expenses from "./Components/Expenses/Expenses";
-
+import NewExpense from "./Components/NewExpense/NewExpense";
 function App() {
   return (
     <div>
-     <h1 style={{textAlign:"center"}}>Expense Tracker</h1>
+     <NewExpense></NewExpense>
     <Expenses></Expenses>
     
     </div>
