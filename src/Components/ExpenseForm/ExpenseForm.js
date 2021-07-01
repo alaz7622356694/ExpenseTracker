@@ -21,6 +21,9 @@ const expenseData={
 
 props.onSaveExpenseData(expenseData)
 
+
+
+
 setEnteredTitle('')
 setEnteredNumber('')
 setEnteredDate('')
