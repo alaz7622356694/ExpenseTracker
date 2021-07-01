@@ -21,7 +21,11 @@ const filter=props.items.filter(item=>{return item.date.getFullYear().toString()
        
         <Card className="expenses" >
             <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-        {filter.length===0 ? <p>No expenses found</p> : filter.map(item=>
+       
+        {filter.length===0 ? <p>No expenses found</p> : 
+        
+        
+        filter.map(item=>
            <ExpenseItems key={item.id} title={item.title} amount={item.amount} date={item.date}></ExpenseItems> ) }
                 
         
