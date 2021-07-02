@@ -3,6 +3,7 @@ import Expenses from "./Components/Expenses/Expenses";
 import { expenses } from "./Components/Expenses/ExpensesSource";
 import NewExpense from "./Components/NewExpense/NewExpense";
 
+
 const dummy=[...expenses]
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
   return (
     <div>
      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+     
     <Expenses items={expenses}></Expenses>
     
     </div>
