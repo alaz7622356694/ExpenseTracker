@@ -5,6 +5,7 @@ import Card from "../UI/Card/Card"
 import React,{useState} from 'react'
 import ExpensesFilter from "../ExpenseFilter/ExpensesFilter";
 import ExpensesChart from "./ExpensesChart";
+import TotalExpense from "./TotalExpense";
 
 const Expenses = (props) => {
 const [filteredYear,setFilteredYear]=useState('2020')
@@ -16,7 +17,11 @@ setFilteredYear(selectedYear)
         }
 //filtering year 
 const filter=props.items.filter(item=>{return item.date.getFullYear().toString()===filteredYear })
-  
+
+const TotalAmount=filter.reduce((a,i)=> a=a+i.amount , 0)
+
+
+console.log(TotalAmount)
     return (
        
         <Card className="expenses" >
@@ -31,7 +36,7 @@ const filter=props.items.filter(item=>{return item.date.getFullYear().toString()
                 
         
        
-    
+    <TotalExpense total={TotalAmount}/>
                 
             
 
