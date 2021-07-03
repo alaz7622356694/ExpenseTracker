@@ -15,17 +15,26 @@ const [filteredYear,setFilteredYear]=useState('2020')
 setFilteredYear(selectedYear)
 
         }
-//filtering year 
-const filter=props.items.filter(item=>{return item.date.getFullYear().toString()===filteredYear })
 
+        const [filteredMonth,setFilteredMonth]=useState('January')
+
+    const filterChangeHandler2=(selectedMonth)=>{
+
+setFilteredMonth(selectedMonth)
+
+        }
+
+//filtering year 
+const filter=props.items.filter(item=> {return(item.date.getFullYear().toString()===filteredYear && item.date.toLocaleString('en-US',{month:'long'})===filteredMonth)})
+    
+        
+//calculating total amount per month based on filter
 const TotalAmount=filter.reduce((a,i)=> a=a+i.amount , 0)
 
-
-console.log(TotalAmount)
     return (
        
         <Card className="expenses" >
-            <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
+            <ExpensesFilter selected={filteredYear} selected2={filteredMonth} onChangeFilter={filterChangeHandler} onChangeFilter2={filterChangeHandler2}/>
      
             <ExpensesChart expenses={filter}/>
         {filter.length===0 ? <p>No expenses found</p> : 

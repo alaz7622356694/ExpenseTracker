@@ -1,6 +1,5 @@
 import React from 'react'
 import './TotalExpense.css'
-import Expenses from './Expenses'
 const TotalExpense = (props) => {
     return (
         <div className='expense-total'>

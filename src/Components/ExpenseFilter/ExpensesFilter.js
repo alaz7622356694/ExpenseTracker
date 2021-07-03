@@ -7,8 +7,14 @@ const ExpensesFilter = (props) => {
  const dropdownChangeHandler=(event)=>{
 props.onChangeFilter(event.target.value)
 
+
  }
 
+ const dropdownChangeHandler2=(event)=>{
+  
+  props.onChangeFilter2(event.target.value)
+  
+   }
 
 
   return (
@@ -16,25 +22,25 @@ props.onChangeFilter(event.target.value)
       <div className='expenses-filter__control'>
         <label>Filter by year</label>
         <select value={props.selected} onChange={dropdownChangeHandler}>
-          <option value='2022' >2022</option>
+         
           <option value='2021'>2021</option>
           <option value='2020'>2020</option>
-          <option value='2019'>2019</option>
+          
         </select>
         <label>Filter by Month</label>
-        <select >
-          <option value='Jan' >Jan</option>
-          <option value='Feb' >Feb</option>
-          <option value='Mar' >Mar</option>
-          <option value='Apr' >Apr</option>
+        <select value={props.selected2} onChange={dropdownChangeHandler2} >
+          <option value='January' >Jan</option>
+          <option value='February' >Feb</option>
+          <option value='March' >Mar</option>
+          <option value='April' >Apr</option>
           <option value='May' >May</option>
-          <option value='Jun' >Jun</option>
-          <option value='Jul' >Jul</option>
-          <option value='Aug' >Aug</option>
-          <option value='Sep' >Sep</option>
-          <option value='Oct' >Oct</option>
-          <option value='Nov' >Nov</option>
-          <option value='Dec' >Dec</option>
+          <option value='June' >Jun</option>
+          <option value='July' >Jul</option>
+          <option value='August' >Aug</option>
+          <option value='September' >Sep</option>
+          <option value='October' >Oct</option>
+          <option value='November' >Nov</option>
+          <option value='December' >Dec</option>
 
         </select>
       </div>
