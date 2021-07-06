@@ -17,7 +17,7 @@ const submitHandler=(event)=>{
 event.preventDefault()
 const expenseData={
     title:enteredTitle,
-    amount:enteredNumber,
+    amount:+enteredNumber,
     date:new Date(enteredDate)
 }
 

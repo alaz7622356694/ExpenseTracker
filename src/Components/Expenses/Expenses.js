@@ -29,7 +29,8 @@ const filter=props.items.filter(item=> {return(item.date.getFullYear().toString(
 const filterYearOnly=props.items.filter(item=> {return(item.date.getFullYear().toString()===filteredYear)})
         
 //calculating total amount per month based on filter
-const TotalAmount=filter.reduce((a,i)=> a=a+i.amount , 0)
+//Rounding number 
+const TotalAmount=Math.round(filter.reduce((a,i)=> a=a+i.amount , 0)*100)/100
 
     return (
        
