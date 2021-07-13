@@ -5,6 +5,7 @@ import NewExpense from "./Components/NewExpense/NewExpense";
 
 
 
+
 const dummy=[...expenses]
 function App() {
   

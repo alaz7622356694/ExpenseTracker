@@ -31,6 +31,11 @@ const filterYearOnly=props.items.filter(item=> {return(item.date.getFullYear().t
 //calculating total amount per month based on filter
 //Rounding number 
 const TotalAmount=Math.round(filter.reduce((a,i)=> a=a+i.amount , 0)*100)/100
+//calculating subtotal amount per year
+const allAmounts=Math.round(filterYearOnly.reduce((a,i)=> a=a+i.amount , 0)*100)/100
+
+
+
 
     return (
        
@@ -46,7 +51,8 @@ const TotalAmount=Math.round(filter.reduce((a,i)=> a=a+i.amount , 0)*100)/100
                 
         
        
-    <TotalExpense total={TotalAmount}/>
+    <TotalExpense total={TotalAmount} yTotal={allAmounts} month={filteredMonth} year={filteredYear}/>
+    
                 
             
 

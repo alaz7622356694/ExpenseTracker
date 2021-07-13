@@ -1,6 +1,9 @@
 .expense-total{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     color:rgb(255, 255, 255);
     align-items: center;
     padding: 0.5rem;
@@ -8,7 +11,7 @@
     background-color: #803bff;
 }
 .expense-total-amount{
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     color: white;
     background-color: #40005d;
@@ -16,4 +19,7 @@
     padding: 0.5rem;
     border-radius: 12px;
     margin: 0 1rem;
+}
+em{
+    color:rgb(221, 1, 1)
 }
