@@ -4,19 +4,19 @@ export const expenses = [
       id: 'e1',
       title: 'Toilet Paper',
       amount: 94.12,
-      date: new Date(2020, 1, 14),
+      date: new Date(2020, 0, 14),
     },
     {
       id: 'e2',
       title: 'Book',
       amount: 94.12,
-      date: new Date(2020, 1, 19),
+      date: new Date(2020,0, 19),
     },
     {
       id: 'e3',
       title: 'pen',
       amount: 94.12,
-      date: new Date(2020, 1, 25),
+      date: new Date(2020, 0, 25),
     },
     { id: 'e4', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
     {
@@ -53,7 +53,7 @@ export const expenses = [
       id: 'e65',
       title: 'New bike',
       amount: 300,
-      date: new Date(2020, 3, 12),
+      date: new Date(2020, 2, 12),
     },
     {
       id: 'e7',
