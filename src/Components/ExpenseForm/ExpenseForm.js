@@ -14,6 +14,7 @@ const numberChangeHandler=(event)=>setEnteredNumber(event.target.value)
 const dateChangeHandler=(event)=>setEnteredDate(event.target.value)
 
 
+const axios = require('axios')
 
 const submitHandler=(event)=>{
 event.preventDefault()
@@ -28,6 +29,14 @@ const expenseData={
     date:new Date(enteredDate)
 }
 
+
+
+axios.post('https://expenseapp-e675d-default-rtdb.firebaseio.com/products.json', {
+   ...expenseData
+  })
+  .then(function (response) {
+    console.log(response);
+  })
 props.onSaveExpenseData(expenseData)
 
 

@@ -1,23 +1,45 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import Expenses from "./Components/Expenses/Expenses";
-import { expenses } from "./Components/Expenses/ExpensesSource";
 import NewExpense from "./Components/NewExpense/NewExpense";
 
 
-
-
-const dummy=[...expenses]
 function App() {
+  const [expenses,setExpenses]=useState([])
   
-  const [expenses,setExpenses]=useState(dummy)
-  const addExpenseHandler=newExpense=>{
- setExpenses([newExpense,...expenses])
+  useEffect(()=>{
+    const fetchData=async()=>{
+      const response=await fetch ('https://expenseapp-e675d-default-rtdb.firebaseio.com/products.json')
+      const responseData=await response.json()
+      const data=[]
+      for(const key in responseData){
+        data.push({
+          id:key,
+          title:responseData[key].title,
+          amount:responseData[key].amount,
+          date:new Date(responseData[key].date)
+      
+        })
+      }
+     
+    
+    setExpenses(data) 
+    }
+    fetchData()
+    
+  }) 
+
   
-  }
+const addExpenseHandler=(data)=>{
+  setExpenses([data,...expenses])
+}
+ 
+  
+
+
 
   return (
     <div>
-    
+   
      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
      
     <Expenses items={expenses}></Expenses>
